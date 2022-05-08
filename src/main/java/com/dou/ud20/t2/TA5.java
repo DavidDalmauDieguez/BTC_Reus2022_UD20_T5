@@ -1,15 +1,10 @@
 package com.dou.ud20.t2;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.MouseInputAdapter;
-
-import com.dou.ud20.t2.TA5.listenerRaton;
-
 import javax.swing.JButton;
 import javax.swing.JTextArea;
 import java.awt.event.ActionListener;
@@ -74,9 +69,9 @@ public class TA5 extends JFrame {
 	class listenerRaton extends MouseInputAdapter {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			textArea.setText("Has hecho clic en \n");
-			textArea.setText("Posicion X: " + e.getX());
-			textArea.setText("Posicion Y: " + e.getY());
+			textArea.append("\nHas hecho clic en");
+			textArea.append("\nPosicion X: " + e.getX());
+			textArea.append("\nPosicion Y: " + e.getY());
 
 		}
 
@@ -84,15 +79,15 @@ public class TA5 extends JFrame {
 		public void mousePressed(MouseEvent e) {
 			// Operacion con bits
 			if (((e.getModifiers() & InputEvent.BUTTON3_MASK) != 0)) {
-				textArea.append("Pulsado el botón derecho");
+				textArea.append("\nPulsado el botón derecho");
 			}
 
-			textArea.append("Se ha pulsado el botón");
+			textArea.append("\nSe ha pulsado el botón");
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent e) {
-			textArea.append("Se ha soltado el botón");
+			textArea.append("\nSe ha soltado el botón");
 		}
 
 		@Override
